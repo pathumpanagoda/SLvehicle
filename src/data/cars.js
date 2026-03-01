@@ -349,3 +349,30 @@ export const trendingSearches = [
   "Best sports car 2024", "Hybrid SUV", "Luxury sedan comparison",
   "Ford Mustang GT", "Sports cars under $40k",
 ];
+
+export const sellerAds = [
+  {
+    id: 'ad1',
+    title: 'Summer Sale - 10% Off All SUVs',
+    subtitle: 'Limited Time Offer by Premium Auto',
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&auto=format&fit=crop',
+    link: '/marketplace?bodyType=SUV',
+    badge: 'Sponsored',
+  },
+  {
+    id: 'ad2',
+    title: 'New Arrival: 2024 Porsche 911',
+    subtitle: 'Available now at Luxury Motors',
+    image: 'https://images.unsplash.com/photo-1503376713356-231f2de2189d?w=800&auto=format&fit=crop',
+    link: '/car/8',
+    badge: 'Featured Dealer',
+  },
+  {
+    id: 'ad3',
+    title: 'Zero Down Financing on EVs',
+    subtitle: 'Go Green with EcoCars Dealership',
+    image: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&auto=format&fit=crop',
+    link: '/marketplace?fuelType=Electric',
+    badge: 'Special Offer',
+  }
+];

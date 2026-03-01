@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Car, Search, BarChart3, ShoppingBag, User, Menu, X, LogOut, Settings } from 'lucide-react';
+import { Car, Search, BarChart3, ShoppingBag, User, Menu, X, LogOut, Settings, Sun, Moon } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useCompare } from '../context/CompareContext';
+import { useTheme } from '../context/ThemeContext';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { currentUser, logout } = useAuth();
   const { compareList } = useCompare();
+  const { theme, toggleTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
 
@@ -74,8 +76,12 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Auth Actions */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+        {/* Auth Actions & Theme */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+          <button onClick={toggleTheme} className="btn-icon" style={{ color: 'var(--text-secondary)' }} aria-label="Toggle Theme">
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+
           {currentUser ? (
             <div style={{ position: 'relative' }}>
               <button

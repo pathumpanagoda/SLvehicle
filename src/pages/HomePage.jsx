@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Search, ChevronDown, TrendingUp, ArrowRight, Star, Shield, Zap } from 'lucide-react';
-import { cars, brands, trendingSearches } from '../data/cars';
+import { cars, brands, trendingSearches, sellerAds } from '../data/cars';
 import CarCard from '../components/CarCard';
-
+import FeaturedSlider from '../components/FeaturedSlider';
 const MAKES = ['Any Make', 'BMW', 'Toyota', 'Tesla', 'Ford', 'Mercedes', 'Honda', 'Audi', 'Porsche'];
 const YEARS = ['Any Year', '2024', '2023', '2022', '2021', '2020', '2019'];
 const BODY_TYPES = ['Any Type', 'Sedan', 'SUV', 'Coupe', 'Hatchback', 'Truck'];
@@ -131,6 +131,13 @@ const HomePage = () => {
               </button>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Featured Slider ──────────────────────────── */}
+      <section style={{ padding: '0 0 80px', marginTop: '-40px', position: 'relative', zIndex: 10 }}>
+        <div className="container" style={{ padding: '0 20px' }}>
+          <FeaturedSlider ads={sellerAds} />
         </div>
       </section>
 

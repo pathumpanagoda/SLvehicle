@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { useEffect } from 'react';
 import { AuthProvider } from './context/AuthContext';
 import { CompareProvider } from './context/CompareContext';
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CompareBar from './components/CompareBar';
@@ -49,13 +50,15 @@ const AppContent = () => {
 };
 
 const App = () => (
-  <AuthProvider>
-    <CompareProvider>
-      <Router>
-        <AppContent />
-      </Router>
-    </CompareProvider>
-  </AuthProvider>
+  <ThemeProvider>
+    <AuthProvider>
+      <CompareProvider>
+        <Router>
+          <AppContent />
+        </Router>
+      </CompareProvider>
+    </AuthProvider>
+  </ThemeProvider>
 );
 
 export default App;
