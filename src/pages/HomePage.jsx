@@ -49,19 +49,29 @@ const HomePage = () => {
         <div style={{ position: 'absolute', bottom: '5%', right: '5%', width: 350, height: 350, borderRadius: '50%', background: 'radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-            style={{ textAlign: 'center', maxWidth: 780, margin: '0 auto 48px' }}>
-            <div className="badge badge-blue" style={{ marginBottom: 20, display: 'inline-flex' }}>
-              🚀 The #1 Car Discovery Platform
-            </div>
-            <h1 style={{ fontSize: 'clamp(38px, 6vw, 72px)', fontFamily: 'Outfit', fontWeight: 900, lineHeight: 1.05, marginBottom: 20 }}>
-              Find Your Perfect{' '}
-              <span className="gradient-text">Dream Car</span>
-            </h1>
-            <p style={{ fontSize: 18, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 560, margin: '0 auto' }}>
-              Search 850,000+ vehicles. Compare specs, watch reviews, and buy directly — all in one premium platform.
-            </p>
-          </motion.div>
+          <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: '40px', margin: '0 auto 48px', maxWidth: '1200px' }}>
+            
+            {/* Left Side: Headlines */}
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
+              style={{ flex: '1 1 500px', textAlign: 'left' }}>
+              <div className="badge badge-blue" style={{ marginBottom: 20, display: 'inline-flex' }}>
+                🚀 The #1 Car Discovery Platform
+              </div>
+              <h1 style={{ fontSize: 'clamp(38px, 5vw, 64px)', fontFamily: 'Outfit', fontWeight: 900, lineHeight: 1.05, marginBottom: 20 }}>
+                Find Your Perfect{' '}
+                <span className="gradient-text">Dream Car</span>
+              </h1>
+              <p style={{ fontSize: 18, color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: 560 }}>
+                Search 850,000+ vehicles. Compare specs, watch reviews, and buy directly — all in one premium platform.
+              </p>
+            </motion.div>
+
+            {/* Right Side: Slider */}
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.1 }}
+              style={{ flex: '1 1 400px', maxWidth: '100%' }}>
+              <FeaturedSlider ads={sellerAds} />
+            </motion.div>
+          </div>
 
           {/* Search Box */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
@@ -131,13 +141,6 @@ const HomePage = () => {
               </button>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── Featured Slider ──────────────────────────── */}
-      <section style={{ padding: '0 0 80px', marginTop: '-40px', position: 'relative', zIndex: 10 }}>
-        <div className="container" style={{ padding: '0 20px' }}>
-          <FeaturedSlider ads={sellerAds} />
         </div>
       </section>
 
